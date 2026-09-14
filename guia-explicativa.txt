@@ -1,0 +1,16 @@
+Guía Explicativa (Formato para guia-explicativa)
+
+1. Justificación del Uso de Etiquetas Semánticas HTML5
+- <header>: Contiene el título principal e introducción, definiendo la identidad superior del documento.
+- <nav>: Agrupa el menú de navegación principal para permitir el acceso directo a las distintas secciones mediante anclas internas.
+- <main>: Delimita el contenido central e histórico de la página, separándolo de elementos globales como la cabecera o pie de página.
+- <section>: Organiza temáticamente la información (Origen, Video, Galería, Logros) facilitando la lectura estructurada.
+- <article>: Enmarca bloques de texto con independencia informativa, como la historia del nacimiento de la serie o las conclusiones.
+- <figure> y <figcaption>: Agrupan cada imagen con su respectivo texto explicativo, asegurando una semántica correcta entre el elemento visual y su contexto descriptivo.
+- <footer>: Contiene la información de cierre, derechos reservados e indicación de las fuentes del proyecto.
+
+2. Estrategia Matemática y CSS para la Maquetación Fluida Tradicional
+- Cálculo con Porcentajes (%): Se configuró el contenedor principal .main-content con un ancho relativo del 90% y un límite superior max-width: 1100px. De este modo, en dispositivos móviles la página abarca casi la totalidad de la pantalla y en monitores grandes se estabiliza sin distorsionarse.
+- Galería Adaptable sin Media Queries: Se empleó float: left con un width de 38% o 48% según el diseño de cuadrícula y márgenes proporcionales. Esta proporción suma el espacio en horizontal sin sobrepasar el 100%, logrando que los elementos se reduzcan o amplíen proporcionalmente de forma fluida ante cualquier cambio de resolución del navegador.
+- Técnica Clearfix: Para evitar que la propiedad float destruya el flujo vertical del DOM y colapse la altura de las secciones flotantes, se aplicó el patrón .clearfix::after insertando clear: both; display: table;.
+- Incrustación de Video Adaptable (16:9): Se evitó el uso de dimensiones fijas en px para el reproductor. Mediante un contenedor relativo (.video-container) con width: 100% y padding-bottom: 56.25% (resultado de 9 / 16 * 100), se logra que el video escale perfectamente manteniendo su proporción vertical y horizontal sin romper la pantalla móvil.
